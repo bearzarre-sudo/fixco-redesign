@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixco LLC - Servicios Profesionales para el Hogar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* --- Navegación simple --- */
+        .navbar {
+            background-color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px -2px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f3b5e;
+            line-height: 1.2;
+        }
+        .logo span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #5f6c80;
+            display: block;
+        }
+        .nav-cta a {
+            background-color: #1e7e34;
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .nav-cta a:hover {
+            background-color: #166b2b;
+        }
+
+        /* --- Hero section (directo) --- */
+        .hero {
+            padding: 3rem 0 4rem 0;
+            background: linear-gradient(145deg, #ffffff 0%, #f1f5f9 100%);
+        }
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #0c4a6e;
+            margin-bottom: 1rem;
+        }
+        .hero-content .subheadline {
+            font-size: 1.4rem;
+            color: #334155;
+            margin-bottom: 2rem;
+            border-left: 4px solid #1e7e34;
+            padding-left: 1.2rem;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+        }
+        .stat-item {
+            font-weight: 600;
+        }
+        .stat-number {
+            font-size: 1.8rem;
+            color: #0f3b5e;
+            display: block;
+            line-height: 1.2;
+        }
+        .hero-cta {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        .btn-primary {
+            background-color: #1e7e34;
+            color: white;
+            box-shadow: 0 8px 16px -4px rgba(30,126,52,0.2);
+        }
+        .btn-primary:hover {
+            background-color: #166b2b;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -8px rgba(30,126,52,0.3);
+        }
+        .btn-outline {
+            background-color: transparent;
+            color: #1e293b;
+            border: 1px solid #94a3b8;
+        }
+        .btn-outline:hover {
+            border-color: #1e7e34;
+            color: #1e7e34;
+            background-color: #f0fdf4;
+        }
+        .hero-image {
+            background-color: #d9e2ef;
+            border-radius: 30px;
+            padding: 2rem;
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4b5e77;
+            font-size: 1.2rem;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%239bb7d4" width="100px" height="100px"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center 40%;
+            background-size: 80px;
+            text-align: center;
+            padding-top: 120px;
+        }
+
+        /* --- Servicios (moderno, directo) --- */
+        .services {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0c4a6e;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .section-sub {
+            text-align: center;
+            color: #475569;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            font-size: 1.2rem;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.8rem;
+        }
+        .service-card {
+            background-color: #f8fafc;
+            padding: 2rem 1.5rem;
+            border-radius: 30px;
+            text-align: center;
+            transition: all 0.2s;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -4px rgba(0,0,0,0.02);
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #b0d4b9;
+            box-shadow: 0 20px 25px -12px rgba(30,126,52,0.18);
+        }
+        .service-icon {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        .service-card h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #0f3b5e;
+        }
+
+        /* --- About mejorado --- */
+        .about {
+            padding: 4rem 0;
+            background-color: #ecfdf5;
+        }
+        .about-flex {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .about-content {
+            flex: 2;
+            min-width: 280px;
+        }
+        .about-content h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0c4a6e;
+            margin-bottom: 0.5rem;
+        }
+        .about-highlight {
+            color: #1e7e34;
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+        }
+        .about-text {
+            color: #1e293b;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        .about-badges {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background-color: white;
+            border-radius: 60px;
+            padding: 0.5rem 1.8rem;
+            font-weight: 600;
+            color: #0f3b5e;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            border: 1px solid #cbd5e1;
+        }
+        .about-image {
+            flex: 1;
+            background-color: #b7c9e2;
+            border-radius: 40px;
+            min-height: 200px;
+            min-width: 240px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%236486a8" width="70px" height="70px"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-1 .05 1.16.84 2 1.87 2 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 90px;
+        }
+
+        /* --- Footer con contacto --- */
+        .footer {
+            background-color: #0f3b5e;
+            color: #e2e8f0;
+            padding: 3rem 0;
+        }
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .footer-info h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .footer-info p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .footer-copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #2d5470;
+            color: #a0bbd0;
+        }
+
+        /* --- WHATSAPP FLOTANTE --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #25D366;
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+            transition: all 0.2s;
+            z-index: 100;
+            text-decoration: none;
+            border: 3px solid white;
+        }
+        .whatsapp-float:hover {
+            background-color: #20b859;
+            transform: scale(1.08);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                font-size: 2.2rem;
+                bottom: 1.2rem;
+                right: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación limpia -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                FIXCO<span>handyman services</span>
+            </div>
+            <div class="nav-cta">
+                <a href="tel:+1234567890">📞 (234) 567-890</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero: directo, con confianza -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Repair. Install. Upgrade.</h1>
+                <div class="subheadline">Profesionales en mantenimiento del hogar</div>
+                <div class="hero-stats">
+                    <div class="stat-item"><span class="stat-number">+5 años</span> experiencia</div>
+                    <div class="stat-item"><span class="stat-number">+500</span> proyectos</div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#" class="btn btn-primary">📋 Presupuesto gratis</a>
+                    <a href="#services" class="btn btn-outline">Ver servicios</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Imagen conceptual (fondo SVG) -->
+                <div style="background: rgba(255,255,255,0.7); padding: 0.5rem 1rem; border-radius: 40px; display: inline-block;">Calidad garantizada</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios (íconos representativos) -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Nuestros servicios</h2>
+            <p class="section-sub">Reparación, montaje, pintura y mejoras para tu hogar</p>
+            <div class="service-grid">
+                <div class="service-card"><div class="service-icon">🖌️</div><h3>Pintura interior/exterior</h3></div>
+                <div class="service-card"><div class="service-icon">🪑</div><h3>Montaje de muebles</h3></div>
+                <div class="service-card"><div class="service-icon">🏠</div><h3>Remodelaciones generales</h3></div>
+                <div class="service-card"><div class="service-icon">🗑️</div><h3>Retiro de escombros</h3></div>
+                <div class="service-card"><div class="service-icon">🧱</div><h3>Reparación de drywall</h3></div>
+                <div class="service-card"><div class="service-icon">✨</div><h3>Mejoras para el hogar</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us: historia + badges -->
+    <section class="about">
+        <div class="container about-flex">
+            <div class="about-content">
+                <h2>Comprometidos con la excelencia</h2>
+                <div class="about-highlight">Desde 2021 mejorando hogares</div>
+                <p class="about-text">
+                    En Fixco entendemos lo valioso que es tu hogar. Nuestro equipo cuenta con más de 5 años de experiencia en servicios de mantenimiento. Nos dedicamos a superar tus expectativas con trabajos de alta calidad a precios justos.
+                </p>
+                <div class="about-badges">
+                    <span class="badge">✅ Alta calidad</span>
+                    <span class="badge">💰 Presupuestos sin costo</span>
+                    <span class="badge">🔧 Profesionales</span>
+                </div>
+            </div>
+            <div class="about-image">
+                <!-- solo fondo SVG representativo -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer con información de contacto clara -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-info">
+                <h3>Fixco LLC</h3>
+                <p>📍 123 Main Street, Ohio</p>
+                <p>📞 <a href="tel:+1234567890" style="color:white; text-decoration:none;">(234) 567-890</a></p>
+                <p>✉️ hola@fixcollc.com</p>
+            </div>
+            <div class="footer-info">
+                <h3>Horario</h3>
+                <p>Lun - Vie: 8:00 am - 6:00 pm</p>
+                <p>Sábados: 9:00 am - 2:00 pm</p>
+            </div>
+        </div>
+        <div class="container footer-copyright">
+            © 2025 Fixco LLC - Handyman Services
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOTANTE (link directo) -->
+    <a href="https://wa.me/1234567890?text=Hola%20Fixco,%20necesito%20información%20sobre%20sus%20servicios" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat por WhatsApp">
+        💬
+    </a>
+    <!-- Nota: reemplazar 1234567890 por el número real de Fixco -->
+</body>
+</html>
