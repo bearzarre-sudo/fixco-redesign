@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixco LLC - Servicios Profesionales para el Hogar</title>
+    <title>Fixco — Servicios Técnicos para el Hogar</title>
     <style>
+        /* ===== RESET ===== */
         * {
             margin: 0;
             padding: 0;
@@ -12,495 +13,616 @@
         }
 
         body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            line-height: 1.5;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #1d1d1f;
+            line-height: 1.47059;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 24px;
         }
 
-        /* --- Navegación simple --- */
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3 {
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+
+        h1 {
+            font-size: 56px;
+            line-height: 1.07143;
+            margin-bottom: 8px;
+            color: #1d2b3a;
+        }
+
+        h2 {
+            font-size: 48px;
+            line-height: 1.08349;
+            margin-bottom: 16px;
+            color: #1d2b3a;
+        }
+
+        h3 {
+            font-size: 24px;
+            line-height: 1.16667;
+            margin-bottom: 8px;
+            color: #1d2b3a;
+        }
+
+        p {
+            font-size: 21px;
+            line-height: 1.381;
+            color: #5b6877;
+        }
+
+        .subhead {
+            font-size: 28px;
+            font-weight: 400;
+            color: #5b6877;
+            max-width: 700px;
+        }
+
+        /* ===== NAVBAR ===== */
         .navbar {
-            background-color: white;
-            padding: 1rem 0;
-            box-shadow: 0 4px 6px -2px rgba(0,0,0,0.05);
+            padding: 24px 0;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(42, 67, 90, 0.1);
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 100;
         }
+
         .navbar .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #0f3b5e;
-            line-height: 1.2;
-        }
-        .logo span {
-            font-size: 1rem;
-            font-weight: 400;
-            color: #5f6c80;
-            display: block;
-        }
-        .nav-cta a {
-            background-color: #1e7e34;
-            color: white;
-            text-decoration: none;
-            padding: 0.6rem 1.5rem;
-            border-radius: 40px;
+            font-size: 24px;
             font-weight: 600;
-            font-size: 1rem;
-            transition: background-color 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .nav-cta a:hover {
-            background-color: #166b2b;
+            color: #1d4e6f;
         }
 
-        /* --- Hero section con imagen real --- */
-        .hero {
-            padding: 3rem 0 4rem 0;
-            background: linear-gradient(145deg, #ffffff 0%, #f1f5f9 100%);
+        .logo span {
+            color: #7f8c98;
+            font-weight: 400;
+            margin-left: 4px;
         }
-        .hero .container {
+
+        .nav-cta a {
+            color: #1d4e6f;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            padding: 8px 20px;
+            border-radius: 980px;
+            background: #eef3f8;
+            transition: 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .nav-cta a:hover {
+            background: #dde9f2;
+            border-color: #cbdae6;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 80px 0 100px;
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafd 100%);
+        }
+
+        .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 60px;
             align-items: center;
         }
-        .hero-content h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
-            line-height: 1.2;
-            color: #0c4a6e;
-            margin-bottom: 1rem;
-        }
-        .hero-content .subheadline {
-            font-size: 1.4rem;
-            color: #334155;
-            margin-bottom: 2rem;
-            border-left: 4px solid #1e7e34;
-            padding-left: 1.2rem;
-        }
+
         .hero-stats {
             display: flex;
-            gap: 2rem;
+            gap: 40px;
+            margin: 32px 0;
         }
+
         .stat-item {
-            font-weight: 600;
+            font-size: 17px;
+            color: #5b6877;
         }
+
         .stat-number {
-            font-size: 1.8rem;
-            color: #0f3b5e;
+            font-size: 32px;
+            font-weight: 600;
+            color: #1d4e6f;
             display: block;
             line-height: 1.2;
         }
+
         .hero-cta {
-            margin-top: 2rem;
             display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+            gap: 16px;
         }
+
         .btn {
             display: inline-block;
-            padding: 0.9rem 2.2rem;
-            border-radius: 60px;
+            padding: 12px 28px;
+            border-radius: 980px;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.2s;
-            border: none;
+            font-size: 17px;
+            font-weight: 500;
+            transition: 0.2s;
             cursor: pointer;
-            font-size: 1.1rem;
         }
+
         .btn-primary {
-            background-color: #1e7e34;
+            background: #1d4e6f;
             color: white;
-            box-shadow: 0 8px 16px -4px rgba(30,126,52,0.2);
+            box-shadow: 0 4px 12px rgba(29, 78, 111, 0.2);
         }
+
         .btn-primary:hover {
-            background-color: #166b2b;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 20px -8px rgba(30,126,52,0.3);
+            background: #0f3a55;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 18px rgba(29, 78, 111, 0.25);
         }
+
         .btn-outline {
-            background-color: transparent;
-            color: #1e293b;
-            border: 1px solid #94a3b8;
+            background: transparent;
+            color: #1d2b3a;
+            border: 1px solid #cbd5e1;
         }
+
         .btn-outline:hover {
-            border-color: #1e7e34;
-            color: #1e7e34;
-            background-color: #f0fdf4;
+            background: #eef3f8;
+            border-color: #1d4e6f;
+            color: #1d4e6f;
         }
+
         .hero-image {
-            border-radius: 30px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
-            height: 100%;
-            min-height: 350px;
-            background-color: #e2e8f0;
+            background: #eef3f8;
+            height: 500px;
+            box-shadow: 0 30px 50px -25px rgba(29, 78, 111, 0.2);
         }
+
         .hero-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: transform 0.3s ease;
-        }
-        .hero-image:hover img {
-            transform: scale(1.03);
         }
 
-        /* --- Servicios con imágenes reales --- */
+        /* ===== SERVICIOS ===== */
         .services {
-            padding: 4rem 0;
-            background-color: white;
+            padding: 120px 0;
+            background: #ffffff;
         }
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #0c4a6e;
-            margin-bottom: 1rem;
+
+        .section-header {
             text-align: center;
+            margin-bottom: 80px;
         }
-        .section-sub {
-            text-align: center;
-            color: #475569;
-            max-width: 700px;
-            margin: 0 auto 3rem auto;
-            font-size: 1.2rem;
+
+        .section-header p {
+            font-size: 24px;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #5b6877;
         }
+
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
+
         .service-card {
-            background-color: #f8fafc;
-            border-radius: 24px;
+            background: white;
+            border-radius: 20px;
             overflow: hidden;
-            transition: all 0.3s;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 25px rgba(29, 78, 111, 0.03);
+            transition: 0.3s;
+            border: 1px solid #eef2f6;
         }
+
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 30px -12px rgba(30,126,52,0.2);
-            border-color: #b0d4b9;
+            transform: translateY(-4px);
+            box-shadow: 0 25px 35px -8px rgba(29, 78, 111, 0.12);
+            border-color: #cbdae6;
         }
+
         .service-img {
             height: 200px;
             overflow: hidden;
+            background: #eef3f8;
         }
+
         .service-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
-        }
-        .service-card:hover .service-img img {
-            transform: scale(1.1);
-        }
-        .service-content {
-            padding: 1.5rem;
-            text-align: center;
-        }
-        .service-content h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #0f3b5e;
-            margin-bottom: 0.5rem;
-        }
-        .service-content p {
-            color: #475569;
-            font-size: 0.95rem;
+            transition: 0.5s;
         }
 
-        /* --- About con imagen real --- */
+        .service-card:hover .service-img img {
+            transform: scale(1.03);
+        }
+
+        .service-content {
+            padding: 24px 20px 28px;
+        }
+
+        .service-content h3 {
+            font-size: 20px;
+            margin-bottom: 6px;
+            color: #1d4e6f;
+        }
+
+        .service-content p {
+            font-size: 16px;
+            color: #5b6877;
+            margin: 0;
+        }
+
+        /* ===== ABOUT ===== */
         .about {
-            padding: 4rem 0;
-            background-color: #ecfdf5;
+            padding: 120px 0;
+            background: #f8fafd;
         }
-        .about-flex {
-            display: flex;
-            gap: 4rem;
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
             align-items: center;
-            flex-wrap: wrap;
         }
-        .about-content {
-            flex: 1.2;
-            min-width: 300px;
-        }
-        .about-content h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #0c4a6e;
-            margin-bottom: 0.5rem;
-        }
-        .about-highlight {
-            color: #1e7e34;
-            font-weight: 600;
-            font-size: 1.3rem;
-            margin-bottom: 1.2rem;
-        }
-        .about-text {
-            color: #1e293b;
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
+
         .about-badges {
             display: flex;
-            gap: 1.5rem;
+            gap: 12px;
+            margin-top: 32px;
             flex-wrap: wrap;
         }
+
         .badge {
-            background-color: white;
-            border-radius: 60px;
-            padding: 0.5rem 1.8rem;
-            font-weight: 600;
-            color: #0f3b5e;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-            border: 1px solid #cbd5e1;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            background: white;
+            border-radius: 100px;
+            padding: 8px 20px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #1d4e6f;
+            border: 1px solid #d4e0e9;
+            box-shadow: 0 2px 6px rgba(29, 78, 111, 0.03);
         }
+
+        .badge:hover {
+            background: #eef3f8;
+            border-color: #9bb7cf;
+        }
+
         .about-image {
-            flex: 0.8;
-            min-width: 280px;
-            border-radius: 30px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 25px 30px -15px rgba(0,40,20,0.3);
+            height: 480px;
+            background: #eef3f8;
+            box-shadow: 0 30px 45px -20px rgba(29, 78, 111, 0.25);
         }
+
         .about-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
-            transition: transform 0.5s;
-        }
-        .about-image:hover img {
-            transform: scale(1.03);
         }
 
-        /* --- Footer con contacto --- */
+        /* ===== GALERÍA ===== */
+        .gallery {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 60px;
+        }
+
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            height: 240px;
+            background: #eef3f8;
+            transition: 0.2s;
+            border: 1px solid #eef2f6;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover {
+            border-color: #9bb7cf;
+            box-shadow: 0 15px 25px -10px rgba(29, 78, 111, 0.15);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.02);
+        }
+
+        /* ===== FOOTER ===== */
         .footer {
-            background-color: #0f3b5e;
-            color: #e2e8f0;
-            padding: 3rem 0 1rem;
+            background: #1d2b3a;
+            padding: 60px 0 30px;
+            border-top: 1px solid #2c4053;
         }
+
         .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
         }
+
         .footer-info h3 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #eef3f8;
+            letter-spacing: 0;
         }
+
         .footer-info p {
-            margin-bottom: 0.5rem;
+            font-size: 14px;
+            color: #9bb1c2;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 8px;
         }
+
         .footer-info a {
-            color: #a0bbd0;
+            color: #b8cfde;
             text-decoration: none;
-            transition: color 0.2s;
+            font-size: 14px;
+            transition: 0.2s;
         }
+
         .footer-info a:hover {
             color: white;
         }
+
         .footer-copyright {
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #2d5470;
-            color: #a0bbd0;
+            font-size: 12px;
+            color: #6f8aa0;
+            padding-top: 30px;
+            border-top: 1px solid #2c4053;
         }
 
-        /* --- WHATSAPP FLOTANTE --- */
+        /* ===== WHATSAPP FLOTANTE ===== */
         .whatsapp-float {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background-color: #25D366;
+            bottom: 30px;
+            right: 30px;
+            background: #1d4e6f;
             color: white;
-            width: 70px;
-            height: 70px;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.8rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            transition: all 0.2s;
+            font-size: 24px;
+            box-shadow: 0 10px 25px rgba(29, 78, 111, 0.25);
+            transition: 0.2s;
             z-index: 100;
             text-decoration: none;
-            border: 3px solid white;
-        }
-        .whatsapp-float:hover {
-            background-color: #20b859;
-            transform: scale(1.08) rotate(5deg);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            border: 2px solid rgba(255,255,255,0.2);
         }
 
-        /* Responsive */
-        @media (max-width: 800px) {
-            .hero .container {
-                grid-template-columns: 1fr;
-            }
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            .hero-image {
-                min-height: 250px;
-            }
-            .service-grid {
-                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            }
-            .whatsapp-float {
-                width: 60px;
-                height: 60px;
-                font-size: 2.2rem;
-                bottom: 1.2rem;
-                right: 1.2rem;
-            }
+        .whatsapp-float:hover {
+            background: #0f3a55;
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(29, 78, 111, 0.35);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1000px) {
+            h1 { font-size: 48px; }
+            h2 { font-size: 40px; }
+            .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+            .service-grid { grid-template-columns: repeat(2,1fr); }
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .gallery-grid { grid-template-columns: repeat(2,1fr); }
+            .footer-content { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 700px) {
+            h1 { font-size: 36px; }
+            .service-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 20px; }
         }
     </style>
 </head>
 <body>
-    <!-- Navegación -->
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                FIXCO<span>handyman services</span>
+                Fixco<span>handyman</span>
             </div>
             <div class="nav-cta">
-                <a href="tel:+1234567890">📞 (234) 567-890</a>
+                <a href="tel:+1234567890">(234) 567-890</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero con imagen real -->
+    <!-- Hero con imagen de handyman profesional -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Repair. Install. Upgrade.</h1>
-                <div class="subheadline">Profesionales en mantenimiento del hogar</div>
+        <div class="container hero-grid">
+            <div>
+                <h1>Repair. Install.<br>Upgrade.</h1>
+                <p class="subhead">Servicios técnicos profesionales con estándares superiores de calidad.</p>
+                
                 <div class="hero-stats">
-                    <div class="stat-item"><span class="stat-number">+5 años</span> experiencia</div>
-                    <div class="stat-item"><span class="stat-number">+500</span> proyectos</div>
+                    <div class="stat-item"><span class="stat-number">5+ años</span> experiencia</div>
+                    <div class="stat-item"><span class="stat-number">500+</span> proyectos</div>
+                    <div class="stat-item"><span class="stat-number">100%</span> garantía</div>
                 </div>
+
                 <div class="hero-cta">
-                    <a href="#" class="btn btn-primary">📋 Presupuesto gratis</a>
+                    <a href="#" class="btn btn-primary">Solicitar presupuesto</a>
                     <a href="#services" class="btn btn-outline">Ver servicios</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://fixcollc.com/wp-content/uploads/2024/06/3B5A6916-1024x683.jpg" 
-                     alt="Equipo de Fixco trabajando en reparación del hogar"
-                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'%3E%3Crect width=\'400\' height=\'300\' fill=\'%233b82f6\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-family=\'Arial\' font-size=\'16\'%3EImagen de Fixco%3C/text%3E%3C/svg%3E'">
+                <!-- Handyman profesional con herramientas  -->
+                <img src="https://images.pexels.com/photos/6195289/pexels-photo-6195289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                     alt="Profesional con herramientas trabajando en reparación">
             </div>
         </div>
     </section>
 
-    <!-- Servicios con imágenes reales -->
+    <!-- Servicios con imágenes representativas -->
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Nuestros servicios</h2>
-            <p class="section-sub">Reparación, montaje, pintura y mejoras para tu hogar</p>
+            <div class="section-header">
+                <h2>Servicios técnicos</h2>
+                <p>Soluciones profesionales para cada necesidad de tu hogar</p>
+            </div>
             <div class="service-grid">
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://fixcollc.com/wp-content/uploads/2024/06/3B5A6951-1024x683.jpg" alt="Pintura interior profesional" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'%3E%3Crect width=\'400\' height=\'300\' fill=\'%233b82f6\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-family=\'Arial\' font-size=\'16\'%3EPintura%3C/text%3E%3C/svg%3E'">
+                        <!-- Pintor profesional - Pexels -->
+                        <img src="https://images.pexels.com/photos/5763383/pexels-photo-5763383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                             alt="Pintura profesional de interiores">
                     </div>
                     <div class="service-content">
                         <h3>Pintura interior/exterior</h3>
-                        <p>Transformamos tus espacios con colores de calidad</p>
+                        <p>Acabados de alta precisión y durabilidad</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://fixcollc.com/wp-content/uploads/2024/06/3B5A6946-1024x683.jpg" alt="Montaje de muebles" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'%3E%3Crect width=\'400\' height=\'300\' fill=\'%233b82f6\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-family=\'Arial\' font-size=\'16\'%3EMontaje%3C/text%3E%3C/svg%3E'">
+                        <!-- Carpintero montando muebles - Pexels -->
+                        <img src="https://images.pexels.com/photos/6474448/pexels-photo-6474448.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                             alt="Profesional ensamblando muebles">
                     </div>
                     <div class="service-content">
                         <h3>Montaje de muebles</h3>
-                        <p>Armamos tus muebles con precisión y cuidado</p>
+                        <p>Ensamblaje profesional con herramientas especializadas</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://fixcollc.com/wp-content/uploads/2024/06/3B5A6935-1024x683.jpg" alt="Remodelaciones generales" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'%3E%3Crect width=\'400\' height=\'300\' fill=\'%233b82f6\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-family=\'Arial\' font-size=\'16\'%3ERemodelaciones%3C/text%3E%3C/svg%3E'">
+                        <!-- Remodelación cocina - Pexels -->
+                        <img src="https://images.pexels.com/photos/3932930/pexels-photo-3932930.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                             alt="Remodelación de cocina">
                     </div>
                     <div class="service-content">
                         <h3>Remodelaciones generales</h3>
-                        <p>Renovamos tus espacios por completo</p>
+                        <p>Transformación integral de espacios</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://fixcollc.com/wp-content/uploads/2024/06/3B5A6921-1024x683.jpg" alt="Retiro de escombros" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'%3E%3Crect width=\'400\' height=\'300\' fill=\'%233b82f6\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-family=\'Arial\' font-size=\'16\'%3ERetiro%20de%20escombros%3C/text%3E%3C/svg%3E'">
+                        <!-- Retiro de escombros / construcción - Pexels -->
+                        <img src="https://images.pexels.com/photos/5598278/pexels-photo-5598278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                             alt="Trabajador con carretilla en obra">
                     </div>
                     <div class="service-content">
                         <h3>Retiro de escombros</h3>
-                        <p>Dejamos todo limpio y ordenado</p>
+                        <p>Gestión eficiente de residuos</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://fixcollc.com/wp-content/uploads/2024/06/3B5A6916-1024x683.jpg" alt="Reparación de drywall" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'%3E%3Crect width=\'400\' height=\'300\' fill=\'%233b82f6\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-family=\'Arial\' font-size=\'16\'%3EDrywall%3C/text%3E%3C/svg%3E'">
+                        <!-- NUEVA IMAGEN: Reparación de drywall - Pexels -->
+                        <img src="https://images.pexels.com/photos/6474377/pexels-photo-6474377.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                             alt="Trabajador instalando panel de yeso drywall">
                     </div>
                     <div class="service-content">
                         <h3>Reparación de drywall</h3>
-                        <p>Arreglamos grietas y daños en paredes</p>
+                        <p>Restauración de paredes con técnica precisa</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://fixcollc.com/wp-content/uploads/2024/06/3B5A6951-1024x683.jpg" alt="Mejoras para el hogar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'%3E%3Crect width=\'400\' height=\'300\' fill=\'%233b82f6\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-family=\'Arial\' font-size=\'16\'%3EMejoras%3C/text%3E%3C/svg%3E'">
+                        <!-- Mejoras hogar - Pexels -->
+                        <img src="https://images.pexels.com/photos/6195278/pexels-photo-6195278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                             alt="Instalaciones y mejoras en el hogar">
                     </div>
                     <div class="service-content">
                         <h3>Mejoras para el hogar</h3>
-                        <p>Pequeños cambios, grandes resultados</p>
+                        <p>Optimización y actualización de espacios</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Us con imagen real -->
+    <!-- About + imagen de equipo -->
     <section class="about">
-        <div class="container about-flex">
-            <div class="about-content">
-                <h2>Comprometidos con la excelencia</h2>
-                <div class="about-highlight">Desde 2021 mejorando hogares</div>
-                <p class="about-text">
-                    En Fixco entendemos lo valioso que es tu hogar. Nuestro equipo cuenta con más de 5 años de experiencia en servicios de mantenimiento. Nos dedicamos a superar tus expectativas con trabajos de alta calidad a precios justos.
-                </p>
+        <div class="container about-grid">
+            <div>
+                <h2>Compromiso técnico desde 2021</h2>
+                <p style="font-size: 21px; margin-bottom: 24px;">Fixco opera con estándares de calidad superiores. Nuestro equipo combina experiencia práctica con formación técnica continua.</p>
+                <div style="margin: 32px 0;">
+                    <p style="font-size: 18px; color: #1d2b3a;">✓ Más de 5 años de experiencia en el sector</p>
+                    <p style="font-size: 18px; color: #1d2b3a; margin-top: 12px;">✓ Especialistas en reparaciones estructurales</p>
+                    <p style="font-size: 18px; color: #1d2b3a; margin-top: 12px;">✓ Certificados en instalaciones y montaje</p>
+                </div>
                 <div class="about-badges">
-                    <span class="badge">✅ Alta calidad</span>
-                    <span class="badge">💰 Presupuestos sin costo</span>
-                    <span class="badge">🔧 Profesionales</span>
+                    <span class="badge">Alta calidad</span>
+                    <span class="badge">Presupuesto técnico</span>
+                    <span class="badge">Garantía escrita</span>
                 </div>
             </div>
             <div class="about-image">
-                <img src="https://fixcollc.com/wp-content/uploads/2024/06/3B5A6942-1024x683.jpg" 
-                     alt="Equipo de Fixco trabajando"
-                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'%3E%3Crect width=\'400\' height=\'300\' fill=\'%233b82f6\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-family=\'Arial\' font-size=\'16\'%3EEquipo%20Fixco%3C/text%3E%3C/svg%3E'">
+                <!-- Equipo de trabajadores profesionales - Pexels -->
+                <img src="https://images.pexels.com/photos/5716019/pexels-photo-5716019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                     alt="Equipo profesional de construcción">
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de trabajos -->
+    <section class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Proyectos recientes</h2>
+                <p>Intervenciones técnicas documentadas</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/6474474/pexels-photo-6474474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Trabajo de pintura">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/3890221/pexels-photo-3890221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Remodelación de baño">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/3932928/pexels-photo-3932928.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Instalación de cocina">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/6195272/pexels-photo-6195272.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Reparación general">
+                </div>
             </div>
         </div>
     </section>
@@ -516,15 +638,16 @@
                     <p>✉️ <a href="mailto:hola@fixcollc.com">hola@fixcollc.com</a></p>
                 </div>
                 <div class="footer-info">
-                    <h3>Horario</h3>
-                    <p>Lun - Vie: 8:00 am - 6:00 pm</p>
-                    <p>Sábados: 9:00 am - 2:00 pm</p>
-                    <p>Domingos: Cerrado</p>
+                    <h3>Horario técnico</h3>
+                    <p>Lun - Vie: 8:00 – 18:00</p>
+                    <p>Sábados: 9:00 – 14:00</p>
+                    <p>Emergencias: 24/7</p>
                 </div>
                 <div class="footer-info">
-                    <h3>Síguenos</h3>
-                    <p>📱 <a href="#">Facebook</a></p>
-                    <p>📷 <a href="#">Instagram</a></p>
+                    <h3>Recursos</h3>
+                    <p><a href="#">Términos de servicio</a></p>
+                    <p><a href="#">Política de privacidad</a></p>
+                    <p><a href="#">Garantías</a></p>
                 </div>
             </div>
             <div class="footer-copyright">
@@ -533,12 +656,11 @@
         </div>
     </footer>
 
-    <!-- WHATSAPP FLOTANTE -->
-    <a href="https://wa.me/1234567890?text=Hola%20Fixco,%20necesito%20información%20sobre%20sus%20servicios" 
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/1234567890?text=Hola%20Fixco,%20necesito%20asesoría%20técnica" 
        class="whatsapp-float" 
        target="_blank" 
-       rel="noopener noreferrer" 
-       aria-label="Chat por WhatsApp">
+       rel="noopener noreferrer">
         💬
     </a>
 </body>
